@@ -1,0 +1,7 @@
+#! /bin/bash
+
+for original_name in *.md;
+do 
+	new_name=`echo $original_name | sed -e 's:^\(.*\)\.md$:\1\.markdown:g'`; 
+	mv $original_name $new_name ; 
+done
