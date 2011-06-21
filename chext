@@ -1,5 +1,12 @@
 #! /bin/bash
 
+
+# Changes the file extension for all files of a type in the current directory
+# Example usage:
+#
+# chext goat pig
+#
+# This will change all .goat file extensions to .pig
 for original_name in *."$1";
 do
 	new_name=`echo $original_name | sed -e 's:^\(.*\)\.'"${1}"'$:\1\.'"${2}"':g'`; 
