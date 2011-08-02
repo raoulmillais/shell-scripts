@@ -1,0 +1,19 @@
+
+#! /bin/bash
+
+
+# Creates new files with the same names as all files with the given file extension
+# with a different file extension
+#
+# Example usage:
+#
+# cpnext js html
+#
+# This will create an empty corresponding html for each jv file
+for original_name in *."$1";
+do
+	new_name=`echo $original_name | sed -e 's:^\(.*\)\.'"${1}"'$:\1\.'"${2}"':g'`; 
+	echo "$original_name -> $new_name"
+
+	touch $new_name ; 
+done
